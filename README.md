@@ -39,8 +39,8 @@ Hover State
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/Muhammad-Nabeel-Sh/Single-Price-Grid-Component-Challenge-Hub)
+- [Live Site URL](https://your-live-site-url.com)
 
 ## My process
 
