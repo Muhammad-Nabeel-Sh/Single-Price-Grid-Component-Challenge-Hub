@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Global Variables */
+$primary-font: "Karla", sans-serif;
+$Cyan: hsl(179, 62%, 43%);
+$Cyan-2: hsla(179, 47%, 52%, 1);
+$Bright-Yellow: hsla(71, 73%, 54%, 1);
+$Light-Gray: hsl(204, 43%, 93%);
+$Grayish-Blue: hsl(218, 22%, 67%);
+$Light-Gray-dimmed: darken(
+  $color: $Light-Gray,
+  $amount: 10,
+);
+$Bright-Yellow-dimmed: darken(
+  $color: $Bright-Yellow,
+  $amount: 10,
+);
+
+body {
+  font-size: 16px;
+  font-family: $primary-font;
+  background-color: $Light-Gray;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  background-color: inherit;
+}
+
+.grid-container {
+  // position: relative;
+  margin: 10vh auto;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "subscription"
+    "why-us";
+  width: 80%;
+  border: none;
+  font-size: 0.8em;
+  border-radius: 10px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+
+  .grid-child {
+    width: 100%;
+    // position: absolute;
+    padding: 30px 30px;
+
+    h2 {
+      background-color: inherit;
+      // font-size: 1.3em;
+      padding-bottom: 15px;
+      font-size: 1.2em;
+    }
+    p,
+    span,
+    a {
+      background-color: inherit;
+      line-height: 1.8;
+    }
+  }
+  .grid-child1 {
+    grid-area: "header";
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+
+    h1 {
+      font-size: 1.5em;
+      color: $Cyan;
+      background-color: inherit;
+      padding-bottom: 20px;
+    }
+    h2 {
+      color: $Bright-Yellow;
+      font-size: 1em;
+    }
+    p {
+      color: $Grayish-Blue;
+    }
+  }
+  .grid-child2 {
+    grid-area: "subscription";
+    background-color: $Cyan;
+    color: $Light-Gray;
+
+    .button {
+      display: block;
+      width: 100%;
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: $Bright-Yellow;
+      padding: 12px 0;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+      font-weight: 700;
+      color: white;
+    }
+    .button:hover {
+      background-color: $Bright-Yellow-dimmed;
+    }
+    .price-parent {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-items: center;
+      .price {
+        font-size: 2.2em;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+      .frequency {
+        color: $Light-Gray-dimmed;
+      }
+    }
+  }
+  .grid-child3 {
+    grid-area: "why-us";
+    background-color: $Cyan-2;
+    border-radius: 0 0 10px 10px;
+    color: $Light-Gray;
+
+    ul {
+      list-style-position: inside;
+      list-style: none;
+      background-color: inherit;
+      li {
+        background-color: inherit;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
+
+footer {
+  margin-bottom: 20px;
+  font-size: 0.7em;
+  width: 100%;
+  text-align: center;
+  p {
+    a {
+      text-decoration: none;
+      color: $Cyan;
+      font-weight: 700;
+    }
+  }
+}
+@media (min-width: 900px) {
+  .grid-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width: 680px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.3fr;
+    grid-template-areas:
+      "header header"
+      "subscription why-us";
+    align-content: center;
+    justify-content: center;
+    font-size: 1em;
+
+    .grid-child {
+      padding: 50px 50px;
+    }
+    .grid-child1 {
+      grid-column: 1/3;
+
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+    .grid-child2 {
+      border-radius: 0 0 0 10px;
+    }
+    .grid-child3 {
+      border: none;
+      border-radius: 0 0 10px 0;
+    }
+  }
+  footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100vw;
+    margin: 0 auto;
+  }
+}
